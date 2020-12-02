@@ -1,7 +1,11 @@
 {
 	"NAME":"WBI-Playmode-USI-CommunityPatches",
-	"URL":"https://github.com/TheDogKSP/WBIPlaymodeUSI/wbiplaymodeusi.version",
+	"URL":"https://raw.githubusercontent.com/TheDogKSP/WBIPlaymodeUSI/main/wbiplaymodeusi.version",
 	"DOWNLOAD":"https://github.com/TheDogKSP/WBIPlaymodeUSI/releases/",
+	"GITHUB": {
+	    "USERNAME": "TheDogKSP",
+	    "REPOSITORY": "WBIPlaymodeUSI"
+	},
 	"VERSION":
 	{
 		"MAJOR":0,
