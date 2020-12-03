@@ -1,6 +1,21 @@
 # WBIPlaymodeUSI
 KSP: dedicated playmode "USI" for WildBlueIndustries (MOLE, Pathfinder, ...)
 
+# Design Considerations
+* USI Life Support mechanism to be used; resources (supplies, fertilizer, mulch); LS recycler mechanics; habitation mechanics ()
+   - https://github.com/UmbraSpaceIndustries/MKS/wiki/Life-Support
+   - https://github.com/UmbraSpaceIndustries/MKS/wiki/Functions-(Habitation)   
+* USI efficiency/load system to be used; crew skills impact; some parts acting as MKS efficiency parts 
+   - https://github.com/UmbraSpaceIndustries/MKS/wiki/Crew-Skills-Impact-on-Parts
+   - https://github.com/UmbraSpaceIndustries/MKS/wiki/Functions-(Efficiency-and-Load)
+* USI resource conversions and manufacturing supply chains to be used
+   - https://github.com/UmbraSpaceIndustries/MKS/wiki/Resources
+   - https://github.com/UmbraSpaceIndustries/MKS/wiki/Functions-%28Manufacturing%29
+* USI logistics system to be used; scavenging, distribution, surface/orbital logistics
+   - https://github.com/UmbraSpaceIndustries/MKS/wiki/Functions-(Logistics)
+   - TBD: side-by-side vs integration with vs replacement of WBI sharing/distribution system   
+* General USI Balance guidelines to be used (https://docs.google.com/spreadsheets/d/1ZI_0InZjd1tfrNDj8RWq45W6cg1UDm6BAkn2jB18Tsk/edit?usp=sharing)
+
 # License
 GPL v3 license, see: https://www.gnu.org/licenses/gpl-3.0.en.html
 
