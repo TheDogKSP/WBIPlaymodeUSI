@@ -1,0 +1,49 @@
+
+// station core: LS recycler
+@PART[WBI_StationHub2]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+	MODULE
+	{
+		name = USI_SwapController
+	}
+
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+	}
+
+	MODULE
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+	}
+
+	MODULE
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 2
+		RecyclePercent = 0.6
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 2.5
+		}
+	}
+
+
+	RESOURCE
+	{
+		name = Supplies
+		amount = 600
+		maxAmount = 600
+	}
+
+}
+

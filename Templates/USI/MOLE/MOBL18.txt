@@ -1,0 +1,375 @@
+// adapted from from WBI MOLE -> ClassicStock
+
+// basic experiment (non-edible plants)
+MOBL
+{
+	author = Angel-125
+	name = BotanyLab
+	title = Mark One Botany Lab
+	shortName = Botany Lab
+	mass = 1.375
+	requiredResource = Equipment
+	requiredAmount = 550
+	reconfigureSkill = ConverterSkill
+	logoPanel = WildBlueIndustries/000WildBlueTools/Decals/Greenhouse
+	glowPanel = WildBlueIndustries/000WildBlueTools/Decals/GreenhouseGlow
+	description = The Botany Lab is a fuel tank converted into an orbiting experimental garden to study plant growth in space. The designers originally wanted to call it the Botany Bay, but crews expressed concerns about the bay secretly holding cryopods full of genetically engineered, highly intelligent, BadS super kerbals capable of simultaneously being pilots, engineers, and scientists that would take over the space station. After numerous failed attempts to show that no secret cryopods existed, engineers relented and renamed the converted tank to the Botany Lab.
+	toolTip = The MOBL is a vital component of the Botanical Research Experiment.
+	toolTipTitle = Your First Botany Lab
+	ignoreMaterialModifier = true
+	CrewCapacity = 2
+	templateTags = moleLab
+
+	MODULE
+	{
+		name = WBIModuleGreenhouse
+		ConverterName = Botany Lab
+		StartActionName = Start Botany Lab
+		StopActionName = Stop Botany Lab
+		AutoShutdown = false
+		GeneratesHeat = false
+		UseSpecialistBonus = true
+		SpecialistEfficiencyFactor = 0.2
+		ExperienceEffect = ScienceSkill
+		EfficiencyBonus = 1
+		hoursPerCycle = 168 //Number of hours to grow crops
+		minimumSuccess = 45
+		criticalSuccess = 95
+		criticalFail = 20
+		cropResource = Plants
+		cropYield = 84
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.5
+		repairSkill = ScienceSkill
+		repairResource = MaterialKits
+		repairAmount = 50
+
+		INPUT_RESOURCE
+		{
+			ResourceName = Water
+			Ratio = 0.00012
+		}
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1.6
+		}
+	}
+
+    
+    // MOLE botany lab: basic life support for crew
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_SwapController
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_SwappableBay
+		bayName = MOBL Bay
+		moduleIndex = 0
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 2
+		RecyclePercent = .25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1
+		}
+	}
+
+
+	RESOURCE
+	{
+		name = Water
+		amount = 100
+		maxAmount = 100
+		isTweakable = true
+	}
+
+}
+
+
+// USI LS conversion (agroponics style lossless like nom-o-matic) 
+MOBL:NEEDS[USILifeSupport]
+{
+	author = Angel-125
+	name = Agroponics
+	title = Agroponics (Supplies)
+	shortName = Agroponics     
+	mass = 1.375
+	requiredResource = Equipment
+	requiredAmount = 550
+	reconfigureSkill = ConverterSkill    
+	logoPanel = WildBlueIndustries/000WildBlueTools/Decals/Greenhouse
+	glowPanel = WildBlueIndustries/000WildBlueTools/Decals/GreenhouseGlow
+	description = The agroponics greenhouse can supplement your supplies if you're patient. It works similarly to the nom-o-matic, but requires a long time to grow the edible plants until they can be harvested and eaten (or not, in case of a fail...)
+	toolTip = The Agroponics Greenhouse can produce supplies to extend your endurance.
+	toolTipTitle = Your First Greenhouse
+	ignoreMaterialModifier = true
+
+	MODULE
+	{
+		name = WBIModuleGreenhouse
+		ConverterName = Agroponics
+		StartActionName = Start Agroponics
+		StopActionName = Stop Agroponics
+		AutoShutdown = false
+		GeneratesHeat = false
+		UseSpecialistBonus = true
+		SpecialistEfficiencyFactor = 0.2
+		ExperienceEffect = ScienceSkill
+		EfficiencyBonus = 1
+		hoursPerCycle = 168 //Number of hours to grow crops
+		minimumSuccess = 25
+		criticalSuccess = 95
+		criticalFail = 20
+		cropResource = Supplies
+		cropYield = 140
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.5
+		repairSkill = ScienceSkill
+		repairResource = MaterialKits
+		repairAmount = 50
+
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = Mulch
+			Ratio = 0.00012
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = Fertilizer
+			Ratio = 0.000012
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1.6
+		}
+
+		//Calibrated for 5 supplies/day, after 28 days (168h)
+		YIELD_RESOURCE
+		{
+			ResourceName = Supplies
+			Ratio = 140
+		}
+	}
+
+    // MOLE botany lab: basic life support for crew
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_SwapController
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_SwappableBay
+		bayName = MOBL Bay
+		moduleIndex = 0
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 2
+		RecyclePercent = .25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1
+		}
+	}
+
+
+	RESOURCE
+	{
+		name = Mulch
+		amount = 0
+		maxAmount = 150
+		isTweakable = true
+	}
+
+	RESOURCE
+	{
+		name = Fertilizer
+		amount = 50
+		maxAmount = 50
+		isTweakable = true
+	}
+    
+    RESOURCE
+	{
+		name = Supplies
+		amount = 0
+		maxAmount = 200
+		isTweakable = true
+	}
+}
+
+
+// USI LS conversion (cultivator style) 
+MOBL:NEEDS[USILifeSupport]
+{
+	author = Angel-125
+	name = Cultivator(S)
+	title = Cultivator (Substrate)
+	shortName = Cultivator    
+	mass = 1.375
+	requiredResource = Equipment
+	requiredAmount = 550
+	reconfigureSkill = ConverterSkill    
+	logoPanel = WildBlueIndustries/000WildBlueTools/Decals/Greenhouse
+	glowPanel = WildBlueIndustries/000WildBlueTools/Decals/GreenhouseGlow
+	description = The cultivator module can supplement your supplies if you're patient. It needs raw resources as input (water, substrate) and grows shiny new supplies. However, it requires a medium time to grow the edible plants until they can be harvested and eaten (or not, in case of a fail...)
+	toolTip = The Cultivator can produce supplies from raw input resources.
+	toolTipTitle = Your First Cultivator module
+	ignoreMaterialModifier = true
+	TechRequired = advExploration
+
+	MODULE
+	{
+		name = WBIModuleGreenhouse
+		ConverterName = Cultivator
+		StartActionName = Start Cultivator
+		StopActionName = Stop Cultivator
+		AutoShutdown = false
+		GeneratesHeat = false
+		UseSpecialistBonus = true
+		SpecialistEfficiencyFactor = 0.2
+		ExperienceEffect = ScienceSkill
+		EfficiencyBonus = 1
+		hoursPerCycle = 60 //Number of hours to grow crops
+		minimumSuccess = 15
+		criticalSuccess = 95
+		criticalFail = 10
+		cropResource = Supplies
+		cropYield = 100
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.5
+		repairSkill = ScienceSkill
+		repairResource = MaterialKits
+		repairAmount = 50        
+
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.25
+
+        INPUT_RESOURCE
+		{
+			ResourceName = Substrate
+			Ratio =  0.00026
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = Water
+			Ratio =  0.00026
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = Fertilizer
+			Ratio =  0.000026
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1.6
+		}
+
+		//Calibrated for 5 supplies/day, after 10 days (60h)
+		YIELD_RESOURCE
+		{
+			ResourceName = Supplies
+			Ratio = 100
+		}
+	}
+
+    // MOLE botany lab: basic life support for crew
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_SwapController
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_SwappableBay
+		bayName = MOBL Bay
+		moduleIndex = 0
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 2
+		RecyclePercent = .25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1
+		}
+	}
+
+
+	RESOURCE
+	{
+		name = Substrate
+		amount = 100
+		maxAmount = 100
+		isTweakable = true
+	}
+
+	RESOURCE
+	{
+		name = Water
+		amount = 100
+		maxAmount = 100
+		isTweakable = true
+	}
+    
+    RESOURCE
+	{
+		name = Fertilizer
+		amount = 50
+		maxAmount = 50
+		isTweakable = true
+	}
+    
+    RESOURCE
+	{
+		name = Supplies
+		amount = 0
+		maxAmount = 100
+		isTweakable = true
+	}
+}

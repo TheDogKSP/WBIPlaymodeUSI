@@ -1,0 +1,9 @@
+// from WBI MOLE -> ClassicStock
+
+@PART[WBI_Coach225,WBI_Coach500]:NEEDS[Pathfinder]:AFTER[Pathfinder]
+{
+	@MODULE[WBIConvertibleStorage]
+	{
+		@defaultTemplate = OmniStorage
+	}
+}

@@ -1,0 +1,49 @@
+// all BOW configs (except LFO) provide some addtional hab space
+
+@BOW[*]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+     //due to its large space, each workshop slightly increases hab value
+    
+    MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+	}
+	MODULE
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+	}
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Habitat
+		StartActionName = Start Habitat
+		StopActionName = Stop Habitat		
+
+		BaseKerbalMonths = 1
+		CrewCapacity = 6
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.6
+		}
+	}
+}
+
+
+@BOW[LFO]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+    //but not the LFO config of course
+    !MODULE[USI_SwapController]{}
+    !MODULE[USI_SwappableBay]{}
+    !MODULE[USI_Converter]{}
+    !MODULE[USILS_HabitationSwapOption]{}
+}    

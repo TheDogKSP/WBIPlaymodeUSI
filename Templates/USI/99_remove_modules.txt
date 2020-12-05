@@ -1,0 +1,6 @@
+
+// remove all USI replacementpart resources (deprecated)
+@PART[*]:HAS[@RESOURCE[ReplacementParts]]:FINAL
+{
+	-RESOURCE[ReplacementParts]{}
+}
