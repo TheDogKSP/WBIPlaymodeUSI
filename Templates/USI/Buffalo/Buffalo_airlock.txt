@@ -1,0 +1,11 @@
+
+// airlock with some supplies
+@PART[WBI_BuffaloAirlock]:AFTER[Buffalo]:NEEDS[USILifeSupport]
+{
+	RESOURCE
+	{
+		name = Supplies
+		amount = 50
+		maxAmount = 50
+	}
+}

@@ -1,0 +1,69 @@
+// all Buffalo crew cabins provide some addtional hab space
+
+@PART[WBI_CrewCab,WBI_LongPassengerCab,WBI_ShortPassengerCab,wbiWagonHab]:AFTER[Buffalo]:NEEDS[USILifeSupport]
+{           
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "Habitat"  //fix to avoid empty string when swapoption is not in chosen template
+	}
+}
+
+
+@PART[WBI_CrewCab,WBI_LongPassengerCab]:AFTER[Buffalo]:NEEDS[USILifeSupport]
+{
+     //hab space
+    
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Habitat
+		StartActionName = Start Habitat
+		StopActionName = Stop Habitat		
+
+		BaseKerbalMonths = 2
+		CrewCapacity = #$/CrewCapacity$
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.2 * #$/CrewCapacity$
+		}
+	}
+}
+
+@PART[WBI_ShortPassengerCab,wbiWagonHab]:AFTER[Buffalo]:NEEDS[USILifeSupport]
+{
+     //hab space
+    
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Habitat
+		StartActionName = Start Habitat
+		StopActionName = Stop Habitat		
+
+		BaseKerbalMonths = 1
+		CrewCapacity = #$/CrewCapacity$
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.15 * #$/CrewCapacity$
+		}
+	}
+}
