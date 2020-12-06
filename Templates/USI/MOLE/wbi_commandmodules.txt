@@ -1,0 +1,22 @@
+// brumby and backseat: carrying supplies (2+1 crew)
+@PART[WBI_Brumby,WBI_Backseat2]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+	RESOURCE
+	{
+		name = Supplies
+		amount = 100
+		maxAmount = 100
+	}
+}
+
+
+// BigCrewModule: carrying supplies (4 crew)
+@PART[WBI_BigCrewModule]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+	RESOURCE
+	{
+		name = Supplies
+		amount = 200
+		maxAmount = 200
+	}
+}

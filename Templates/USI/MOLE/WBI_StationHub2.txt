@@ -6,18 +6,18 @@
 	{
 		name = USI_SwapController
 	}
-
 	MODULE
 	{
 		name = USI_SwappableBay
 		bayName = Bay 1
 		moduleIndex = 0
+        hasPermanentLoadout = true
 	}
-
-	MODULE
+	MODULE:NEEDS[USILifeSupport]
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
+        ConverterName = "Life Support"  //fix to avoid empty string when swapoption is not in chosen template
 	}
 
 	MODULE

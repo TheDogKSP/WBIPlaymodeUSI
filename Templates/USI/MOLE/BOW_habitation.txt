@@ -1,10 +1,8 @@
 // all BOW configs (except LFO) provide some addtional hab space
 
-@BOW[*]:AFTER[MOLE]:NEEDS[USILifeSupport]
-{
-     //due to its large space, each workshop slightly increases hab value
-    
-    MODULE
+@PART[WBI_BOW]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{           
+	MODULE
 	{
 		name = USI_SwapController
 	}
@@ -13,12 +11,21 @@
 		name = USI_SwappableBay
 		bayName = Bay 1
 		moduleIndex = 0
+        hasPermanentLoadout = true
 	}
-	MODULE
+	MODULE:NEEDS[USILifeSupport]
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
+        ConverterName = "Habitat"  //fix to avoid empty string when swapoption is not in chosen template
 	}
+}
+
+
+@BOW[*]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+     //due to its large space, each workshop slightly increases hab value
+    
 	MODULE
 	{
 		name = USILS_HabitationSwapOption
@@ -42,8 +49,5 @@
 @BOW[LFO]:AFTER[MOLE]:NEEDS[USILifeSupport]
 {
     //but not the LFO config of course
-    !MODULE[USI_SwapController]{}
-    !MODULE[USI_SwappableBay]{}
-    !MODULE[USI_Converter]{}
     !MODULE[USILS_HabitationSwapOption]{}
 }    
