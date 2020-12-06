@@ -16,6 +16,10 @@ KSP: dedicated playmode "USI" for WildBlueIndustries (MOLE, Pathfinder, ...)
    - TBD: side-by-side vs integration with vs replacement of WBI sharing/distribution system   
 * General USI Balance guidelines to be used (https://docs.google.com/spreadsheets/d/1ZI_0InZjd1tfrNDj8RWq45W6cg1UDm6BAkn2jB18Tsk/edit?usp=sharing)
 
+# Installation
+Complete contents go under $KSP_DIR/GameData/WildBluePlaymodeUSI
+!Any other folder path will lead to the templates not being properly found and switched by the wbi playmode switcher!
+
 # Known Problems
 see: https://raw.githubusercontent.com/TheDogKSP/WBIPlaymodeUSI/master/Known_Problems
 
