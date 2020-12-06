@@ -1,0 +1,23 @@
+# Known Problems (and workarounds)
+# (1) NullReferenceException spam in the editor
+
+Occasionally happens when loading a vessel with WBI changeable templates and USI swappable bays/converters.
+Unfortunately, the USI swappable bays and swap controller dont like their swapoptions to be dynamically removed/added.
+
+Workaround:
+* save your vessel
+* click the blue "new vessel" button, effectively emptying the editor
+* load your saved vessel
+
+NullRefs should be gone, and the correct swaptions should be set on the USI converters (hab, ls recycler, ...).
+
+
+# (2) Changing the WBI template in flight does not affect USI swapoptions, e.g. habitat continues to run even though the WBI template is switched to "Wet Workshop" (LFO storage), which does not have a habitat option.
+
+Does always happen, same cause as (1): the USI swapcontroller does not like its swap option to be completely removed.
+
+Workaround:
+* leave vessel (go to KSC)
+* switch back to that vessel (flight mode)
+
+The converter (habitat, ls recycler) is still on the vessel and shown as active, but EC consumption should be zero now and there should be no hab/recycler effect on the vessel for this part (confirm with USI LS Monitor).
