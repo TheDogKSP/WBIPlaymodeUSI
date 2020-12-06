@@ -1,0 +1,56 @@
+//Omni Converters can be used by any part that has a WBIOmniConverter part module. These are used in place of the traditional WBI template system configurations. The advantage is that a part can specialize its converters instead of being stuck with using one converter from a template and wasting the rest.
+
+//Omni converter templates work almost like a ModuleResourceConverter in terms of setting them up except for the description field and TechRequired field. These provide a short description of the converter's purpose and the tech node that must be unlocked in order to use it.
+
+//You can tag an omni converter template like you would a traditional template. If the converter's tags match the template's tags, then it can use the converter template.
+
+//Just like storage templates, a converter's efficiency is standardized by volume: Assume that one converter takes up one cubic meter (1000 liters, about the size of a Bucboard 1000) unless otherwise noted. Parts should take this into account when determining how many omni converters the part has. 
+//The volume of the converter affects its BaseEfficiency; a 1000-liter standard converter has a BaseEfficiency of 1.0, while a 500-liter converter has a BaseEfficiency of 0.5, and a 2000-liter converter has a BaseEfficiency of 2.0. 
+
+//----- Life Support -----
+
+OMNICONVERTER
+{
+	templateTags = hab;lab
+	TechRequired:NEEDS[!CommunityTechTree] = advConstruction
+    TechRequired:NEEDS[CommunityTechTree] = longTermHabitation
+	ConverterName = Life Support Purifier
+	description = Uses water and EC to recycle some mulch and improve life support sustainability, albeit at a low efficiency.
+	StartActionName = Start Purifier
+	StopActionName = Stop Purifier
+	AutoShutdown = false
+	UseSpecialistBonus = false
+	SpecialistEfficiencyFactor = 0.2
+	SpecialistBonusBase = 0.05
+	ExperienceEffect = ScienceSkill
+	EfficiencyBonus = 1
+		 
+	INPUT_RESOURCE
+	{
+		ResourceName = Water
+		Ratio = 0.00042
+		FlowMode = ALL_VESSEL
+	}
+
+	INPUT_RESOURCE
+	{
+		ResourceName = ElectricCharge
+		Ratio = 0.4
+		FlowMode = ALL_VESSEL
+	}
+
+	INPUT_RESOURCE
+	{
+		ResourceName = Mulch
+		Ratio = 0.00021
+		FlowMode = ALL_VESSEL
+	}
+
+	OUTPUT_RESOURCE
+	{
+		ResourceName = Supplies
+		Ratio = 0.00021
+		DumpExcess = true
+		FlowMode = ALL_VESSEL
+	}
+}

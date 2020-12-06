@@ -1,0 +1,18 @@
+STORAGE_TEMPLATE
+{
+	author = Angel-125
+	name = Supplies
+	shortName = Supplies
+	logoPanel = WildBlueIndustries/000WildBlueTools/Decals/Snacks
+	glowPanel = WildBlueIndustries/000WildBlueTools/Decals/SnacksGlow
+	description = This kit stores supplies (N.O.M.S.).
+	templateTags = stowage
+
+	RESOURCE
+	{
+		name = Supplies
+		amount = 5600
+		maxAmount = 5600
+	}
+
+}
