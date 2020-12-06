@@ -18,6 +18,7 @@ KSP: dedicated playmode "USI" for WildBlueIndustries (MOLE, Pathfinder, ...)
 
 # Installation
 Complete contents go under $KSP_DIR/GameData/WildBluePlaymodeUSI
+
 !Any other folder path will lead to the templates not being properly found and switched by the wbi playmode switcher!
 
 # Known Problems
