@@ -1,8 +1,6 @@
-@MOH[Dolores]:AFTER[MOLE]:NEEDS[USILifeSupport]
+@PART[WBI_MOH18]:AFTER[MOLE]:NEEDS[USILifeSupport]
 {
-    //Dolores hab: habitat function: 4months for 2 kerbals
-    
-    MODULE
+	MODULE
 	{
 		name = USI_SwapController
 	}
@@ -11,12 +9,20 @@
 		name = USI_SwappableBay
 		bayName = Bay 1
 		moduleIndex = 0
+        hasPermanentLoadout = true
 	}
-	MODULE
+	MODULE:NEEDS[USILifeSupport]
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
+        ConverterName = "Habitat"  //fix to avoid empty string when swapoption is not in chosen template
 	}
+}
+
+@MOH[Dolores]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+    //Dolores hab: habitat function: 4months for 2 kerbals
+    
 	MODULE
 	{
 		name = USILS_HabitationSwapOption
