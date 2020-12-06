@@ -1,7 +1,16 @@
-// USI playmode for WBI MOLE
+// USI playmode for WBI PATHFINDER
 //
 // --Part list:--
 //
 //
 // --WBI Template Configurations:--
 //
+
+WBIPLAYMODEEXT
+{
+	//Name of the play mode
+	name = USI
+
+	//Name of the mod that supports the play mode.
+	modName = Pathfinder
+}

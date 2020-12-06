@@ -33,16 +33,8 @@
 		INPUT_RESOURCE
 		{
 			ResourceName = ElectricCharge
-			Ratio = 2.5
+			Ratio = 0.5
 		}
-	}
-
-
-	RESOURCE
-	{
-		name = Supplies
-		amount = 600
-		maxAmount = 600
 	}
 
 }

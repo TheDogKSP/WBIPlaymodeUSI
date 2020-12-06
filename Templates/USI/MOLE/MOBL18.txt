@@ -1,5 +1,28 @@
 // adapted from from WBI MOLE -> ClassicStock
 
+@PART[WBI_MOBL18]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "Life Support Recycler"  //fix to avoid empty string when LS recycler swapoption is not in chosen template
+	}
+
+}
+
+
 // basic experiment (non-edible plants)
 MOBL
 {
@@ -28,10 +51,11 @@ MOBL
 		StopActionName = Stop Botany Lab
 		AutoShutdown = false
 		GeneratesHeat = false
-		UseSpecialistBonus = true
-		SpecialistEfficiencyFactor = 0.2
+		UseSpecialistBonus = false
+		SpecialistEfficiencyFactor = 1.0
 		ExperienceEffect = ScienceSkill
 		EfficiencyBonus = 1
+        //crewsRequired = 0
 		hoursPerCycle = 168 //Number of hours to grow crops
 		minimumSuccess = 45
 		criticalSuccess = 95
@@ -61,21 +85,6 @@ MOBL
     // MOLE botany lab: basic life support for crew
 	MODULE:NEEDS[USILifeSupport]
 	{
-		name = USI_SwapController
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
-		name = USI_SwappableBay
-		bayName = MOBL Bay
-		moduleIndex = 0
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
-		name = USI_Converter
-		UseSpecialistBonus = false
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
 		name = USILS_LifeSupportRecyclerSwapOption
 		ConverterName = Life Support Recycler
 		StartActionName = Start Life Support
@@ -87,16 +96,17 @@ MOBL
 		INPUT_RESOURCE
 		{
 			ResourceName = ElectricCharge
-			Ratio = 1
+			Ratio = 0.25
 		}
 	}
 
+    
 
 	RESOURCE
 	{
 		name = Water
-		amount = 100
-		maxAmount = 100
+		amount = 150
+		maxAmount = 150
 		isTweakable = true
 	}
 
@@ -120,6 +130,8 @@ MOBL:NEEDS[USILifeSupport]
 	toolTip = The Agroponics Greenhouse can produce supplies to extend your endurance.
 	toolTipTitle = Your First Greenhouse
 	ignoreMaterialModifier = true
+	CrewCapacity = 2
+	templateTags = moleLab    
 
 	MODULE
 	{
@@ -129,8 +141,8 @@ MOBL:NEEDS[USILifeSupport]
 		StopActionName = Stop Agroponics
 		AutoShutdown = false
 		GeneratesHeat = false
-		UseSpecialistBonus = true
-		SpecialistEfficiencyFactor = 0.2
+		UseSpecialistBonus = false
+		SpecialistEfficiencyFactor = 1.0
 		ExperienceEffect = ScienceSkill
 		EfficiencyBonus = 1
 		hoursPerCycle = 168 //Number of hours to grow crops
@@ -172,22 +184,8 @@ MOBL:NEEDS[USILifeSupport]
 		}
 	}
 
-    // MOLE botany lab: basic life support for crew
-	MODULE:NEEDS[USILifeSupport]
-	{
-		name = USI_SwapController
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
-		name = USI_SwappableBay
-		bayName = MOBL Bay
-		moduleIndex = 0
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
-		name = USI_Converter
-		UseSpecialistBonus = false
-	}
+
+   // MOLE botany lab: basic life support for crew
 	MODULE:NEEDS[USILifeSupport]
 	{
 		name = USILS_LifeSupportRecyclerSwapOption
@@ -201,9 +199,9 @@ MOBL:NEEDS[USILifeSupport]
 		INPUT_RESOURCE
 		{
 			ResourceName = ElectricCharge
-			Ratio = 1
+			Ratio = 0.25
 		}
-	}
+	}  
 
 
 	RESOURCE
@@ -250,6 +248,8 @@ MOBL:NEEDS[USILifeSupport]
 	toolTipTitle = Your First Cultivator module
 	ignoreMaterialModifier = true
 	TechRequired = advExploration
+	CrewCapacity = 2
+	templateTags = moleLab    
 
 	MODULE
 	{
@@ -259,8 +259,8 @@ MOBL:NEEDS[USILifeSupport]
 		StopActionName = Stop Cultivator
 		AutoShutdown = false
 		GeneratesHeat = false
-		UseSpecialistBonus = true
-		SpecialistEfficiencyFactor = 0.2
+		UseSpecialistBonus = false
+		SpecialistEfficiencyFactor = 1.0
 		ExperienceEffect = ScienceSkill
 		EfficiencyBonus = 1
 		hoursPerCycle = 60 //Number of hours to grow crops
@@ -310,21 +310,6 @@ MOBL:NEEDS[USILifeSupport]
     // MOLE botany lab: basic life support for crew
 	MODULE:NEEDS[USILifeSupport]
 	{
-		name = USI_SwapController
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
-		name = USI_SwappableBay
-		bayName = MOBL Bay
-		moduleIndex = 0
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
-		name = USI_Converter
-		UseSpecialistBonus = false
-	}
-	MODULE:NEEDS[USILifeSupport]
-	{
 		name = USILS_LifeSupportRecyclerSwapOption
 		ConverterName = Life Support Recycler
 		StartActionName = Start Life Support
@@ -336,24 +321,24 @@ MOBL:NEEDS[USILifeSupport]
 		INPUT_RESOURCE
 		{
 			ResourceName = ElectricCharge
-			Ratio = 1
+			Ratio = 0.25
 		}
 	}
-
+    
 
 	RESOURCE
 	{
 		name = Substrate
-		amount = 100
-		maxAmount = 100
+		amount = 150
+		maxAmount = 150
 		isTweakable = true
 	}
 
 	RESOURCE
 	{
 		name = Water
-		amount = 100
-		maxAmount = 100
+		amount = 150
+		maxAmount = 150
 		isTweakable = true
 	}
     
@@ -369,7 +354,7 @@ MOBL:NEEDS[USILifeSupport]
 	{
 		name = Supplies
 		amount = 0
-		maxAmount = 100
+		maxAmount = 200
 		isTweakable = true
 	}
 }
