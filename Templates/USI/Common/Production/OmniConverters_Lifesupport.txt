@@ -28,14 +28,14 @@ OMNICONVERTER
 	INPUT_RESOURCE
 	{
 		ResourceName = Water
-		Ratio = 0.00042
+		Ratio = 0.000358
 		FlowMode = ALL_VESSEL
 	}
 
 	INPUT_RESOURCE
 	{
 		ResourceName = ElectricCharge
-		Ratio = 0.4
+		Ratio = 2.5
 		FlowMode = ALL_VESSEL
 	}
 

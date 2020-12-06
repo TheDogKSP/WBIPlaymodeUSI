@@ -1,0 +1,11 @@
+// airlock with supplies
+
+@PART[WBI_AirlockModule]:AFTER[MOLE]:NEEDS[USILifeSupport]
+{
+	RESOURCE
+	{
+		name = Supplies
+		amount = 100
+		maxAmount = 100
+	}
+}
