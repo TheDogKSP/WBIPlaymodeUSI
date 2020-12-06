@@ -17,7 +17,7 @@ KSP: dedicated playmode "USI" for WildBlueIndustries (MOLE, Pathfinder, ...)
 * General USI Balance guidelines to be used (https://docs.google.com/spreadsheets/d/1ZI_0InZjd1tfrNDj8RWq45W6cg1UDm6BAkn2jB18Tsk/edit?usp=sharing)
 
 # Known Problems
-see: Known_Problems
+see: https://raw.githubusercontent.com/TheDogKSP/WBIPlaymodeUSI/master/Known_Problems
 
 # License
 GPL v3 license, see: https://www.gnu.org/licenses/gpl-3.0.en.html
