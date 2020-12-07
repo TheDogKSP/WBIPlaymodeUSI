@@ -42,7 +42,7 @@ OMNICONVERTER
 	INPUT_RESOURCE
 	{
 		ResourceName = Mulch
-		Ratio = 0.0001
+		Ratio = 0.00010
 		FlowMode = ALL_VESSEL
 	}
 
