@@ -27,7 +27,7 @@ OMNICONVERTER
 		 
 	INPUT_RESOURCE
 	{
-		ResourceName = fertilizer
+		ResourceName = Fertilizer
 		Ratio = 0.00001
 		FlowMode = ALL_VESSEL
 	}
