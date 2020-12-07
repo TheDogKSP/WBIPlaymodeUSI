@@ -14,10 +14,10 @@ OMNICONVERTER
 	templateTags = hab;lab
 	TechRequired:NEEDS[!CommunityTechTree] = advConstruction
     TechRequired:NEEDS[CommunityTechTree] = longTermHabitation
-	ConverterName = Life Support Purifier
-	description = Uses water and EC to recycle some mulch and improve life support sustainability, albeit at a low efficiency.
-	StartActionName = Start Purifier
-	StopActionName = Stop Purifier
+	ConverterName = Life Support Converter
+	description = The Nom-O-Matic Agroponics converter uses fertilizer and EC to recycle some mulch and improve life support sustainability, albeit at a low efficiency.
+	StartActionName = Start Agroponics
+	StopActionName = Stop Agroponics
 	AutoShutdown = false
 	UseSpecialistBonus = false
 	SpecialistEfficiencyFactor = 0.2
@@ -27,29 +27,29 @@ OMNICONVERTER
 		 
 	INPUT_RESOURCE
 	{
-		ResourceName = Water
-		Ratio = 0.000358
+		ResourceName = fertilizer
+		Ratio = 0.00001
 		FlowMode = ALL_VESSEL
 	}
 
 	INPUT_RESOURCE
 	{
 		ResourceName = ElectricCharge
-		Ratio = 2.5
+		Ratio = 2.6
 		FlowMode = ALL_VESSEL
 	}
 
 	INPUT_RESOURCE
 	{
 		ResourceName = Mulch
-		Ratio = 0.00021
+		Ratio = 0.0001
 		FlowMode = ALL_VESSEL
 	}
 
 	OUTPUT_RESOURCE
 	{
 		ResourceName = Supplies
-		Ratio = 0.00021
+		Ratio = 0.00011
 		DumpExcess = true
 		FlowMode = ALL_VESSEL
 	}
