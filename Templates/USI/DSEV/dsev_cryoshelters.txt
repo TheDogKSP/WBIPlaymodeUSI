@@ -1,0 +1,82 @@
+
+// hab multipliers due to freeze functionality
+
+@PART[WBI_D2CryoShelter]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "Cryo Shelter"  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Cryo Shelter
+		StartActionName = Start Cryo Shelter
+		StopActionName = Stop Cryo Shelter		
+
+		BaseKerbalMonths = 0
+		CrewCapacity = 12
+		BaseHabMultiplier = 1.0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1.2
+		}
+	}
+}
+
+
+@PART[wbiMeatLocker]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "Cryo Shelter"  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Cryo Shelter
+		StartActionName = Start Cryo Shelter
+		StopActionName = Stop Cryo Shelter		
+
+		BaseKerbalMonths = 0
+		CrewCapacity = 4
+		BaseHabMultiplier = 1.0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.4
+		}
+	}
+}
+

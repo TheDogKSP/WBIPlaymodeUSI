@@ -1,0 +1,233 @@
+// similar to MOLE->MOBL
+
+@PART[WBI_D2Greenhouse,wbiZenGreenhouse]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "Life Support Recycler"  //fix to avoid empty string when LS recycler swapoption is not in chosen template
+	}
+
+}
+
+
+// USI LS conversion (agroponics style lossless like nom-o-matic) 
+@PART[WBI_D2Greenhouse]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // LS recycler for 4 kerbals
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 4
+		RecyclePercent = .5
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1.0
+		}
+	}      
+    
+    
+    // agroponics greenhouse
+	MODULE
+	{
+		name = WBIModuleGreenhouse
+		ConverterName = Agroponics
+		StartActionName = Start Agroponics
+		StopActionName = Stop Agroponics
+		AutoShutdown = false
+		GeneratesHeat = false
+		UseSpecialistBonus = false
+		SpecialistEfficiencyFactor = 1.0
+		ExperienceEffect = ScienceSkill
+		EfficiencyBonus = 1
+		hoursPerCycle = 168 //Number of hours to grow crops
+		minimumSuccess = 25
+		criticalSuccess = 95
+		criticalFail = 20
+		cropResource = Supplies
+        
+		//Calibrated for 4 kerbals at 50% consumption for 28 days
+		//Supports 2 kerbals
+		cropYield = 560
+        
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.5
+		repairSkill = ScienceSkill
+		repairResource = MaterialKits
+		repairAmount = 50
+
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = Mulch
+			Ratio = 0.000842
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = Fertilizer
+			Ratio = 0.000084
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 6.4
+		}
+
+		//Calibrated for 4 kerbals at 5 supplies/day, after 28 days (168h)
+		YIELD_RESOURCE
+		{
+			ResourceName = Supplies
+			Ratio = 560
+		}
+	}
+
+
+	RESOURCE
+	{
+		name = Mulch
+		amount = 0
+		maxAmount = 1000
+		isTweakable = true
+	}
+
+	RESOURCE
+	{
+		name = Fertilizer
+		amount = 50
+		maxAmount = 50
+		isTweakable = true
+	}
+    
+    RESOURCE
+	{
+		name = Supplies
+		amount = 0
+		maxAmount = 1000
+		isTweakable = true
+	}
+}
+
+
+
+// USI LS conversion (agroponics style lossless like nom-o-matic) 
+@PART[wbiZenGreenhouse]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // LS recycler for 2 kerbals
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 2
+		RecyclePercent = .5
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.5
+		}
+	}      
+    
+    
+    // agroponics greenhouse
+	MODULE
+	{
+		name = WBIModuleGreenhouse
+		ConverterName = Agroponics
+		StartActionName = Start Agroponics
+		StopActionName = Stop Agroponics
+		AutoShutdown = false
+		GeneratesHeat = false
+		UseSpecialistBonus = false
+		SpecialistEfficiencyFactor = 1.0
+		ExperienceEffect = ScienceSkill
+		EfficiencyBonus = 1
+		hoursPerCycle = 168 //Number of hours to grow crops
+		minimumSuccess = 25
+		criticalSuccess = 95
+		criticalFail = 20
+		cropResource = Supplies
+        
+		//Calibrated for 2 kerbals at 100% consumption for 28 days
+		cropYield = 280
+        
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.5
+		repairSkill = ScienceSkill
+		repairResource = MaterialKits
+		repairAmount = 50
+
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = Mulch
+			Ratio = 0.000421
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = Fertilizer
+			Ratio = 0.000042
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 3.2
+		}
+
+		//Calibrated for 2 kerbals at 5 supplies/day, after 28 days (168h)
+		YIELD_RESOURCE
+		{
+			ResourceName = Supplies
+			Ratio = 280
+		}
+	}
+
+
+	RESOURCE
+	{
+		name = Mulch
+		amount = 0
+		maxAmount = 500
+		isTweakable = true
+	}
+
+	RESOURCE
+	{
+		name = Fertilizer
+		amount = 50
+		maxAmount = 50
+		isTweakable = true
+	}
+    
+    RESOURCE
+	{
+		name = Supplies
+		amount = 0
+		maxAmount = 500
+		isTweakable = true
+	}
+}

@@ -1,0 +1,21 @@
+
+// airlocks with some supplies
+@PART[nautilusAirlock]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+	RESOURCE
+	{
+		name = Supplies
+		amount = 150
+		maxAmount = 150
+	}
+}
+
+@PART[quantumLeapAirlock]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+	RESOURCE
+	{
+		name = Supplies
+		amount = 125
+		maxAmount = 125
+	}
+}
