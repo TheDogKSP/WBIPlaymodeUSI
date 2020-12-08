@@ -634,7 +634,7 @@ OMNICONVERTER
 {
 	templateTags = hab;lab
 	TechRequired = spaceExploration
-	description = The Haber Process can create Fertilizerfrom Ore and Minerals.
+	description = The Haber Process can create Fertilizer from Ore and Minerals.
 	ConverterName = Haber Process
 	StartActionName = Start Haber Process
 	StopActionName = Stop Haber Process
@@ -674,7 +674,7 @@ OMNICONVERTER
 	OUTPUT_RESOURCE
 	{
 		ResourceName = Fertilizer
-		Ratio = .001
+		Ratio = .0005
 		DumpExcess = false
 		FlowMode = ALL_VESSEL
 	}
