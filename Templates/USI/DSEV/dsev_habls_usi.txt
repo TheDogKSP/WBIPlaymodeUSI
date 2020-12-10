@@ -1,0 +1,81 @@
+@PART[wbiNautilusCentrifuge]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // artificial gravity improves hab
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = Artificial Gravity Habitat  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Artificial Gravity Habitat
+		StartActionName = Start Artificial Gravity Habitat
+		StopActionName = Stop Artificial Gravity Habitat		
+
+		BaseKerbalMonths = 12
+		CrewCapacity = 16
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1.6
+		}
+	}
+}
+
+
+@PART[WBI_D2Centrifuge]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // artificial gravity improves hab
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = Artificial Gravity Habitat  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Artificial Gravity Habitat
+		StartActionName = Start Artificial Gravity Habitat
+		StopActionName = Stop Artificial Gravity Habitat		
+
+		BaseKerbalMonths = 24
+		CrewCapacity = 12
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 1.2
+		}
+	}
+}
+
