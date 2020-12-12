@@ -79,3 +79,43 @@
 	}
 }
 
+
+@PART[WBI_D2Lab]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // D2 modules with added LS
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = Life Support Recycler  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    // LS recycler for 4 kerbals
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 4
+		RecyclePercent = .25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.5
+		}
+	}  
+}
+

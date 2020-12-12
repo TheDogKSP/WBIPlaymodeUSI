@@ -1,0 +1,103 @@
+@PART[WBI_D2Hab,WBI_D2Office]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // habitation options
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = Habitat  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    
+}
+
+
+D2HAB:NEEDS[USILifeSupport]
+{
+	author = Angel-125
+	name = Habitat
+	title = Habitat
+	mass = 3.5
+	requiredResource = Equipment
+	requiredAmount = 1400
+	reconfigureSkill = ConverterSkill
+	logoPanel = WildBlueIndustries/000WildBlueTools/Decals/Castillo_Home
+	glowPanel = WildBlueIndustries/000WildBlueTools/Decals/Castillo_Home
+	description = Lots of habitation space for the crew!
+	enableMPLModules = false
+	ignoreMaterialModifier = true
+    templateTags = dsevHab
+
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Habitat
+		StartActionName = Start Habitat
+		StopActionName = Stop Habitat		
+
+		BaseKerbalMonths = 12
+		CrewCapacity = 6
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.6
+		}
+	}
+
+}
+
+
+//                 
+// OFFICE specfic:
+//
+@D2HAB[Classroom]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{                          
+
+	@description = The Classroom gives your kerbals an advanced lab equipped with pencils and paper to train up your crew. It also serves as a habitation multiplier.
+    %templateTags = dsevHabOffice
+
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Habitat
+		StartActionName = Start Habitat
+		StopActionName = Stop Habitat		
+
+		BaseKerbalMonths = 0
+		CrewCapacity = 10
+		BaseHabMultiplier = 0.5
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.5
+		}
+	}
+}
+
+@PART[WBI_D2Office]:AFTER[DSEV]
+{
+	@MODULE[WBIMultiConverter]:NEEDS[!Pathfinder]
+	{
+		%templateTags = dsevHabOffice
+	}
+
+    @MODULE[WBIMultipurposeHab]:NEEDS[Pathfinder]
+	{
+		%templateTags = dsevHabOffice
+	}
+
+}
+
