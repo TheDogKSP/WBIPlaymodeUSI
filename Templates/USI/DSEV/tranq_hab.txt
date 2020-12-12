@@ -1,0 +1,47 @@
+@PART[TranquilityHab]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // habitation options
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE:NEEDS[USILifeSupport]
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = Habitat  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    
+}
+
+
+@TRANQ[Tranquility]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Habitat
+		StartActionName = Start Habitat
+		StopActionName = Stop Habitat		
+
+		BaseKerbalMonths = 12
+		CrewCapacity = 4
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.4
+		}
+	}
+
+}
+

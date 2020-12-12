@@ -1,9 +1,0 @@
-// USI playmode for WBI PATHFINDER
-//
-// --Part list:--
-//
-//
-// --WBI Template Configurations:--
-//
-
-

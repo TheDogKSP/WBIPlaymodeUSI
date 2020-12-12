@@ -1,7 +1,0 @@
-// USI playmode for WBI Tools
-//
-// --Part list:--
-//
-//
-// --WBI Template Configurations:--
-//

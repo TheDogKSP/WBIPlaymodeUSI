@@ -1,8 +1,0 @@
-// USI playmode for WBI Buffalo
-//
-// --Part list:--
-//
-//
-// --WBI Template Configurations:--
-//
-

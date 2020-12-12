@@ -1,8 +1,0 @@
-// USI playmode for WBI DSEV
-//
-// --Part list:--
-//
-//
-// --WBI Template Configurations:--
-//
-
