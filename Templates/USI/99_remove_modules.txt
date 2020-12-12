@@ -5,21 +5,3 @@
 	-RESOURCE[ReplacementParts]{}
 }
 
-
-// remove outdated OSE stuff
-@PART[*]:HAS[@MODULE[OseModuleInventoryPreference]]:FINAL
-{
-	-MODULE[OseModuleInventoryPreference]{}
-}
-@PART[*]:HAS[@MODULE[OseModuleCategoryAddon]]:FINAL
-{
-	-MODULE[OseModuleCategoryAddon]{}
-}
-@PART[*]:HAS[@MODULE[OseModuleWorkshop]]:FINAL
-{
-	-MODULE[OseModuleWorkshop]{}
-}
-@PART[*]:HAS[@MODULE[OseModuleRecycler]]:FINAL
-{
-	-MODULE[OseModuleRecycler]{}
-}
