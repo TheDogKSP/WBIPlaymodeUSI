@@ -96,7 +96,7 @@ D2HAB:NEEDS[USILifeSupport]
 
     @MODULE[WBIMultipurposeHab]:NEEDS[Pathfinder]
 	{
-        templateTags = dsevHabOffice 
+		%templateTags = dsevHabOffice
 	}
 
 }
