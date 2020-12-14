@@ -1,0 +1,99 @@
+// adapted from from WBI MOLE -> ClassicStock
+
+// USI LS conversion (agroponics style lossless like nom-o-matic) 
+@PATH_INDUSTRY[CropWorks]:NEEDS[USILifeSupport]
+{
+	%author = Angel-125
+	%title = CropWorks Industrial Greenhouse Agroponics (Supplies)
+	%shortName = CropWorks Agroponics     
+	%includeModuleInfo = true
+	%mass = 5
+	%requiredResource = Equipment
+	%requiredAmount = 2000
+	%templateTags = orbitalWorkshop
+	%reconfigureSkill = ConverterSkill
+	%logoPanel = WildBlueIndustries/000WildBlueTools/Decals/Factory_CropWorks
+	%glowPanel = WildBlueIndustries/000WildBlueTools/Decals/Factory_CropWorksGlow
+	%toolTip = If you have a green thumb, then in 90 days (or less with the right talent), you'll have crops to consume. A good crop yield will give you more edible resources than normal, while a bad yield will give you less. If the crops fail, you'll get no edible resources at all and you'll need to start over.
+	%toolTipTitle = Your First Industrial Greenhouse!
+	%capacityFactor = 1.0
+	%efficiencyType = habitation
+
+	MODULE
+	{
+		name = WBIModuleGreenhouse
+		ConverterName = Agroponics
+		StartActionName = Start Agroponics
+		StopActionName = Stop Agroponics
+		AutoShutdown = false
+		GeneratesHeat = false
+		UseSpecialistBonus = false
+		SpecialistEfficiencyFactor = 1.0
+		ExperienceEffect = ScienceSkill
+		EfficiencyBonus = 1
+		hoursPerCycle = 168 //Number of hours to grow crops
+		minimumSuccess = 25
+		criticalSuccess = 95
+		criticalFail = 20
+		cropResource = Supplies
+		cropYield = 140
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.5
+		repairSkill = ScienceSkill
+		repairResource = MaterialKits
+		repairAmount = 50
+
+		criticalSuccessBonus = 0.25
+		failureLoss = 0.25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = Mulch
+			Ratio = 0.00063
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = Fertilizer
+			Ratio = 0.00007
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 4.6
+		}
+
+		//Calibrated for 15 supplies/day, after 28 days (168h)
+		YIELD_RESOURCE
+		{
+			ResourceName = Supplies
+			Ratio = 420
+		}
+	}
+
+
+
+	RESOURCE
+	{
+		name = Mulch
+		amount = 0
+		maxAmount = 500
+		isTweakable = true
+	}
+
+	RESOURCE
+	{
+		name = Fertilizer
+		amount = 200
+		maxAmount = 200
+		isTweakable = true
+	}
+    
+    RESOURCE
+	{
+		name = Supplies
+		amount = 0
+		maxAmount = 1000
+		isTweakable = true
+	}
+}
+
