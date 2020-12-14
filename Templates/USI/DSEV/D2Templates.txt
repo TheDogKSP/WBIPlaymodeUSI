@@ -189,12 +189,6 @@ D2LAB
 			DumpExcess = false
 		}
 
-		OUTPUT_RESOURCE
-		{
-			ResourceName = Oxygen
-			Ratio = 0.001
-			DumpExcess = false
-		}
 	}
 
 	MODULE
@@ -232,12 +226,6 @@ D2LAB
 			FlowMode = NO_FLOW
 		}
 
-		OUTPUT_RESOURCE
-		{
-			ResourceName = Oxygen
-			Ratio = 0.001
-			DumpExcess = false
-		}
 	}
 
 	MODULE
@@ -282,46 +270,6 @@ D2LAB
 		}
 	}
 
-	MODULE
-	{
-		name = ModuleResourceConverter
-		ConverterName = Uranium Salter
-		StartActionName = Start Salter
-		StopActionName = Stop Salter
-		AutoShutdown = false
-		GeneratesHeat = false
-		UseSpecialistBonus = true
-		SpecialistEfficiencyFactor = 0.2
-		SpecialistBonusBase = 0.05
-		ExperienceEffect = ConverterSkill
-		EfficiencyBonus = 1
-
-		INPUT_RESOURCE
-		{
-			ResourceName = EnrichedUranium
-			Ratio = 0.0002
-		}
-
-		INPUT_RESOURCE
-		{
-			ResourceName = Water
-			Ratio = 1
-		}
-
-		INPUT_RESOURCE
-		{
-			ResourceName = ElectricCharge
-			Ratio = 18
-		}
-
-		OUTPUT_RESOURCE
-		{
-			ResourceName:NEEDS[!FarFutureTechnologies] = Explodium
-			ResourceName:NEEDS[FarFutureTechnologies] = NuclearSaltWater
-			Ratio = 1
-			DumpExcess = false
-		}
-	}
 
 	MODULE
 	{

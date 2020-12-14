@@ -90,13 +90,6 @@
 		}
 		OUTPUT_RESOURCE
 		{
-			ResourceName = Oxygen
-			Ratio = 27.78
-			DumpExcess = true
-			FlowMode = STAGE_PRIORITY_FLOW
-		}
-		OUTPUT_RESOURCE
-		{
 			ResourceName = LqdHydrogen
 			Ratio = 0.78455
 			DumpExcess = true
