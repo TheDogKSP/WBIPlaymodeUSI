@@ -6,7 +6,7 @@ PATH_HABITATION
 	shortName = Blacksmith
 	needs = Workshop
 	TechRequired = advExploration
-	description = With a steady supply of MaterialKits, the Blacksmith 3D Print Shop from ObiVanDamme Space Engineering can build components for new vessels. Kerbals on EVA then assemble those components into a new craft. The Blacksmith also comes equipped with a recycling unit to recycle stored items back to MaterialKits with a conversion rate of 15%.
+	description = With a steady supply of MaterialKits, the Blacksmith 3D Print Shop from ObiVanDamme Space Engineering can build components for new vessels. Kerbals on EVA then assemble those components into a new craft. The Blacksmith also comes equipped with a recycling unit to recycle stored items back to MaterialKits with a conversion rate of 25%.
 	mass = 1.5
 	requiredResource = Equipment
 	requiredAmount = 600
@@ -39,8 +39,20 @@ PATH_HABITATION
 
 		INPUT_RESOURCE
 		{
-			ResourceName = Ore
-			Ratio = 1
+			ResourceName = Metal
+			Ratio = 0.0032
+		}
+        
+        INPUT_RESOURCE
+		{
+			ResourceName = Polymers
+			Ratio = 0.0032
+		}
+        
+        INPUT_RESOURCE
+		{
+			ResourceName = Chemicals
+			Ratio = 0.0016
 		}
 
 		INPUT_RESOURCE
@@ -52,7 +64,7 @@ PATH_HABITATION
 		OUTPUT_RESOURCE
 		{
 			ResourceName = MaterialKits
-			Ratio = 0.1875
+			Ratio = 0.00725
 			DumpExcess = false
 		}
 	}

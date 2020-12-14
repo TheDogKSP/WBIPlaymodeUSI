@@ -45,7 +45,7 @@ PATH_HABITATION
 		OUTPUT_RESOURCE
 		{
 			ResourceName = Water
-			Ratio = 0.000357
+			Ratio = 0.000257
 		}
 
 		OUTPUT_RESOURCE
