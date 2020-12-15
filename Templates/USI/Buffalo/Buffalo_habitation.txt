@@ -13,7 +13,7 @@
 		moduleIndex = 0
         hasPermanentLoadout = true
 	}
-	MODULE:NEEDS[USILifeSupport]
+	MODULE
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
@@ -44,6 +44,7 @@
 		}
 	}
 }
+
 
 @PART[WBI_ShortPassengerCab,wbiWagonHab]:AFTER[Buffalo]:NEEDS[USILifeSupport]
 {

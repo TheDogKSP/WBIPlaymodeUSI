@@ -13,7 +13,7 @@
 		moduleIndex = 0
         hasPermanentLoadout = true
 	}
-	MODULE:NEEDS[USILifeSupport]
+	MODULE
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
@@ -27,7 +27,7 @@
 @PART[WBI_D2Greenhouse]:AFTER[DSEV]:NEEDS[USILifeSupport]
 {
     // LS recycler for 4 kerbals
-	MODULE:NEEDS[USILifeSupport]
+	MODULE
 	{
 		name = USILS_LifeSupportRecyclerSwapOption
 		ConverterName = Life Support Recycler
@@ -133,7 +133,7 @@
 @PART[wbiZenGreenhouse]:AFTER[DSEV]:NEEDS[USILifeSupport]
 {
     // LS recycler for 2 kerbals
-	MODULE:NEEDS[USILifeSupport]
+	MODULE
 	{
 		name = USILS_LifeSupportRecyclerSwapOption
 		ConverterName = Life Support Recycler

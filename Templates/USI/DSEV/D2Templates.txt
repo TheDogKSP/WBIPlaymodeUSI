@@ -69,6 +69,7 @@ CENTRIFUGE
 	}
 }
 
+
 D2LAB
 {
 	author = Angel-125
@@ -139,6 +140,7 @@ D2LAB
 		maxAmount = 1000
 	}
 }
+
 
 D2LAB
 {

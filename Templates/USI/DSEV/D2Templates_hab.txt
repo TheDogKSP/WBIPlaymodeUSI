@@ -12,7 +12,7 @@
 		moduleIndex = 0
         hasPermanentLoadout = true
 	}
-	MODULE:NEEDS[USILifeSupport]
+	MODULE
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false

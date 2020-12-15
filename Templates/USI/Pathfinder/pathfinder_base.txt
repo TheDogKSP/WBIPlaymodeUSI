@@ -1,0 +1,27 @@
+// adapted from USI
+
+@PART[WBI_Ponderosa,WBI_Ponderosa2,WBI_DocSciLab,WBI_Hacienda]:AFTER[Pathfinder]:NEEDS[MKS]
+{
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "(none)"  //fix to avoid empty string when LS recycler swapoption is not in chosen template
+	}
+     
+	MODULE
+	{
+		name = MKSModule		
+	}
+}

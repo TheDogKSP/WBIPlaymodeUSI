@@ -1,0 +1,88 @@
+// adapted from USI
+
+@PART[WBI_Chuckwagon]:AFTER[Pathfinder]:NEEDS[MKS]
+{
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "[Greenhouse]"  //fix to avoid empty string when LS recycler swapoption is not in chosen template
+	}
+     
+	MODULE
+	{
+		name = MKSModule
+		EfficiencyMultiplier = 2.5
+		BonusEffect = ScienceBoost			
+	}
+}
+
+// MKS conversion (efficiency part) 
+@GREENHOUSE[Prairie]:AFTER[Pathfinder]:NEEDS[MKS]
+{
+
+	%toolTip = This greenhouse does not produce supplies on its own, but massively boosts the efficiency of larger MKS agroponics or cultivator modules, as well as colony science.
+	%toolTipTitle = Your First Greenhouse!
+
+
+    MODULE
+	{
+		name = USI_EfficiencyBoosterSwapOption
+		ConverterName = [Greenhouse]
+		StartActionName = Start [Greenhouse]
+		StopActionName = Stop [Greenhouse]
+
+		EfficiencyTag = Greenhouse
+		EfficiencyMultiplier = 2.5
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 15
+		}
+		REQUIRED_RESOURCE
+		{
+			ResourceName = Machinery
+			Ratio = 500
+		}
+		INPUT_RESOURCE
+		{
+			ResourceName = Machinery
+			Ratio = 0.00001
+		}
+		OUTPUT_RESOURCE
+		{
+			ResourceName = Recyclables
+			Ratio = 0.00001
+			DumpExcess = true
+		}
+	}
+    
+	RESOURCE
+	{
+		name = Machinery
+		amount = 0
+		maxAmount = 500
+		isTweakable = True
+	}
+	RESOURCE
+	{
+		name = Recyclables
+		amount = 0
+		maxAmount = 500
+		isTweakable = True
+	}
+
+}
+

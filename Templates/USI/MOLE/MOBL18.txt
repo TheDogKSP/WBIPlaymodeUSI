@@ -13,7 +13,7 @@
 		moduleIndex = 0
         hasPermanentLoadout = true
 	}
-	MODULE:NEEDS[USILifeSupport]
+	MODULE
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
@@ -263,7 +263,7 @@ MOBL:NEEDS[USILifeSupport]
 		SpecialistEfficiencyFactor = 1.0
 		ExperienceEffect = ScienceSkill
 		EfficiencyBonus = 1
-		hoursPerCycle = 60 //Number of hours to grow crops
+		hoursPerCycle = 84 //Number of hours to grow crops
 		minimumSuccess = 15
 		criticalSuccess = 95
 		criticalFail = 10
@@ -299,11 +299,11 @@ MOBL:NEEDS[USILifeSupport]
 			Ratio = 1.6
 		}
 
-		//Calibrated for 5 supplies/day, after 10 days (60h)
+		//Calibrated for 5 supplies/day, after 14 days (84h)
 		YIELD_RESOURCE
 		{
 			ResourceName = Supplies
-			Ratio = 100
+			Ratio = 70
 		}
 	}
 

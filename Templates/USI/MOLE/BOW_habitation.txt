@@ -1,4 +1,4 @@
-// all BOW configs (except LFO) provide some addtional hab space
+//  BOW configs (except LFO) may provide some templates with swpatoptions
 
 @PART[WBI_BOW]:AFTER[MOLE]:NEEDS[USILifeSupport]
 {           
@@ -13,41 +13,11 @@
 		moduleIndex = 0
         hasPermanentLoadout = true
 	}
-	MODULE:NEEDS[USILifeSupport]
+	MODULE
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
-        ConverterName = "Habitat"  //fix to avoid empty string when swapoption is not in chosen template
+        ConverterName = "(none)"  //fix to avoid empty string when swapoption is not in chosen template
 	}
 }
 
-
-@BOW[*]:AFTER[MOLE]:NEEDS[USILifeSupport]
-{
-     //due to its large space, each workshop slightly increases hab value
-    
-	MODULE
-	{
-		name = USILS_HabitationSwapOption
-		ConverterName = Habitat
-		StartActionName = Start Habitat
-		StopActionName = Stop Habitat		
-
-		BaseKerbalMonths = 1
-		CrewCapacity = 6
-		BaseHabMultiplier = 0
-
-		INPUT_RESOURCE
-		{
-			ResourceName = ElectricCharge
-			Ratio = 0.6
-		}
-	}
-}
-
-
-@BOW[LFO]:AFTER[MOLE]:NEEDS[USILifeSupport]
-{
-    //but not the LFO config of course
-    !MODULE[USILS_HabitationSwapOption]{}
-}    

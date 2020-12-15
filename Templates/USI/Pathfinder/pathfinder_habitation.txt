@@ -1,0 +1,67 @@
+// add corresponding effects to standard pigpen and ponderosa
+//
+// require swpacontroller, swappablebay and usi_converter to be already present on the part config!
+// in: Pathfinder, MOLE, DSEV
+
+// USI-LS conversion
+@PATH_HABITATION[Pigpen]:AFTER[Pathfinder]:NEEDS[USILifeSupport]
+{
+
+    // Pigpen: dedicated life support
+	MODULE
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 4
+		RecyclePercent = .5
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.5
+		}
+	}
+    
+    
+	MODULE:NEEDS[MKS]
+	{
+		name = MKSModule			
+	}      
+
+}
+
+
+// USI-LS conversion
+@PATH_HABITATION[PonderosaHab]:AFTER[Pathfinder]:NEEDS[USILifeSupport]
+{
+
+    // PonderosaHab: dedicated habitation
+	MODULE
+	{
+		name = USILS_HabitationSwapOption
+		ConverterName = Habitat
+		StartActionName = Start Habitat
+		StopActionName = Stop Habitat		
+
+		BaseKerbalMonths = 12
+		CrewCapacity = 4
+		BaseHabMultiplier = 0
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.8
+		}
+	}
+    
+    
+	MODULE:NEEDS[MKS]
+	{
+		name = MKSModule			
+	}      
+
+}
+

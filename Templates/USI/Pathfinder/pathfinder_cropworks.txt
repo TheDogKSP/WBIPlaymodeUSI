@@ -1,7 +1,7 @@
 // adapted from from WBI MOLE -> ClassicStock
 
 // USI LS conversion (agroponics style lossless like nom-o-matic) 
-@PATH_INDUSTRY[CropWorks]:NEEDS[USILifeSupport]
+@PATH_INDUSTRY[CropWorks]:AFTER[Pathfinder]:NEEDS[USILifeSupport]
 {
 	%author = Angel-125
 	%title = CropWorks Industrial Greenhouse Agroponics (Supplies)
