@@ -16,7 +16,7 @@
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
-        ConverterName = "(none)"  //fix to avoid empty string when swapoption is not in chosen template
+        ConverterName = LifeSupport/Habitation  //fix to avoid empty string when swapoption is not in chosen template
 	}
     
 }

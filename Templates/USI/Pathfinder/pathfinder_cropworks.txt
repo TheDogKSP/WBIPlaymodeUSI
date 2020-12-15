@@ -19,6 +19,24 @@
 	%capacityFactor = 1.0
 	%efficiencyType = habitation
 
+    // basic LS recycler for 4 kerbals
+	MODULE
+	{
+		name = USILS_LifeSupportRecyclerSwapOption
+		ConverterName = Life Support Recycler
+		StartActionName = Start Life Support
+		StopActionName = Stop Life Support
+
+		CrewCapacity = 4
+		RecyclePercent = 0.25
+
+		INPUT_RESOURCE
+		{
+			ResourceName = ElectricCharge
+			Ratio = 0.5
+		}
+	}  
+    
 	MODULE
 	{
 		name = WBIModuleGreenhouse

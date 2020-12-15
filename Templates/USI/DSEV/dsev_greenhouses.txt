@@ -17,7 +17,7 @@
 	{
 		name = USI_Converter
 		UseSpecialistBonus = false
-        ConverterName = "Life Support Recycler"  //fix to avoid empty string when LS recycler swapoption is not in chosen template
+        ConverterName = LifeSupport/Habitation  //fix to avoid empty string when LS recycler swapoption is not in chosen template
 	}
 
 }

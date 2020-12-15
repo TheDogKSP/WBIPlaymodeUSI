@@ -1,4 +1,4 @@
-@PART[estonianEDLTank]:NEEDS[Pathfinder]:FOR[DSEV]
+@PART[estonianEDLTank]:NEEDS[Pathfinder]:AFTER[DSEV]
 {
 	@MODULE[WBIConvertibleStorage]
 	{
