@@ -1,0 +1,24 @@
+@PART[WBI_HomesteadMk3]:AFTER[DSEV]:NEEDS[USILifeSupport]
+{
+    // habitation options
+	MODULE
+	{
+		name = USI_SwapController
+	}
+	MODULE
+	{
+		name = USI_SwappableBay
+		bayName = Bay 1
+		moduleIndex = 0
+        hasPermanentLoadout = true
+	}
+	MODULE
+	{
+		name = USI_Converter
+		UseSpecialistBonus = false
+        ConverterName = "(none)"  //fix to avoid empty string when swapoption is not in chosen template
+	}
+    
+}
+
+
