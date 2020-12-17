@@ -30,7 +30,7 @@
 		StartActionName = Start Habitat
 		StopActionName = Stop Habitat		
 
-		BaseKerbalMonths = 4
+		BaseKerbalMonths = 12
 		CrewCapacity = 2
 		BaseHabMultiplier = 0
 
