@@ -263,12 +263,12 @@ MOBL:NEEDS[USILifeSupport]
 		SpecialistEfficiencyFactor = 1.0
 		ExperienceEffect = ScienceSkill
 		EfficiencyBonus = 1
-		hoursPerCycle = 84 //Number of hours to grow crops
+		hoursPerCycle = 168 //Number of hours to grow crops
 		minimumSuccess = 15
 		criticalSuccess = 95
 		criticalFail = 10
 		cropResource = Supplies
-		cropYield = 100
+		cropYield = 70
 		criticalSuccessBonus = 0.25
 		failureLoss = 0.5
 		repairSkill = ScienceSkill
@@ -281,17 +281,17 @@ MOBL:NEEDS[USILifeSupport]
         INPUT_RESOURCE
 		{
 			ResourceName = Substrate
-			Ratio =  0.00026
+			Ratio =  0.00014
 		}
 		INPUT_RESOURCE
 		{
 			ResourceName = Water
-			Ratio =  0.00026
+			Ratio =  0.00014
 		}
 		INPUT_RESOURCE
 		{
 			ResourceName = Fertilizer
-			Ratio =  0.000026
+			Ratio =  0.000012
 		}
 		INPUT_RESOURCE
 		{
@@ -299,7 +299,7 @@ MOBL:NEEDS[USILifeSupport]
 			Ratio = 1.6
 		}
 
-		//Calibrated for 5 supplies/day, after 14 days (84h)
+		//Calibrated for 5 supplies/day, after 28 days (168h)
 		YIELD_RESOURCE
 		{
 			ResourceName = Supplies

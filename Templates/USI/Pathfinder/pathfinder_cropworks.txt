@@ -14,7 +14,7 @@
 	%reconfigureSkill = ConverterSkill
 	%logoPanel = WildBlueIndustries/000WildBlueTools/Decals/Factory_CropWorks
 	%glowPanel = WildBlueIndustries/000WildBlueTools/Decals/Factory_CropWorksGlow
-	%toolTip = If you have a green thumb, then in 90 days (or less with the right talent), you'll have crops to consume. A good crop yield will give you more edible resources than normal, while a bad yield will give you less. If the crops fail, you'll get no edible resources at all and you'll need to start over.
+	%toolTip = If you have a green thumb, then in 14 days (or less with the right talent), you'll have crops to consume. A good crop yield will give you more edible resources than normal, while a bad yield will give you less. If the crops fail, you'll get no edible resources at all and you'll need to start over.
 	%toolTipTitle = Your First Industrial Greenhouse!
 	%capacityFactor = 1.0
 	%efficiencyType = habitation
@@ -36,59 +36,63 @@
 			Ratio = 0.5
 		}
 	}  
-    
+
 	MODULE
 	{
 		name = WBIModuleGreenhouse
-		ConverterName = Agroponics
-		StartActionName = Start Agroponics
-		StopActionName = Stop Agroponics
+		ConverterName = Cultivator
+		StartActionName = Start Cultivator
+		StopActionName = Stop Cultivator
 		AutoShutdown = false
 		GeneratesHeat = false
 		UseSpecialistBonus = false
 		SpecialistEfficiencyFactor = 1.0
 		ExperienceEffect = ScienceSkill
 		EfficiencyBonus = 1
-		hoursPerCycle = 168 //Number of hours to grow crops
-		minimumSuccess = 25
+		hoursPerCycle = 84 //Number of hours to grow crops
+		minimumSuccess = 15
 		criticalSuccess = 95
-		criticalFail = 20
+		criticalFail = 10
 		cropResource = Supplies
-		cropYield = 140
+		cropYield = 210
 		criticalSuccessBonus = 0.25
 		failureLoss = 0.5
 		repairSkill = ScienceSkill
 		repairResource = MaterialKits
-		repairAmount = 50
+		repairAmount = 50        
 
 		criticalSuccessBonus = 0.25
 		failureLoss = 0.25
 
+        INPUT_RESOURCE
+		{
+			ResourceName = Substrate
+			Ratio =  0.0014
+		}
 		INPUT_RESOURCE
 		{
-			ResourceName = Mulch
-			Ratio = 0.00063
+			ResourceName = Water
+			Ratio =  0.0014
 		}
 		INPUT_RESOURCE
 		{
 			ResourceName = Fertilizer
-			Ratio = 0.00007
+			Ratio =  0.00012
 		}
 		INPUT_RESOURCE
 		{
 			ResourceName = ElectricCharge
-			Ratio = 4.6
+			Ratio = 2.6
 		}
 
-		//Calibrated for 15 supplies/day, after 28 days (168h)
+		//Calibrated for 15 supplies/day, after 14 days (168h)
 		YIELD_RESOURCE
 		{
 			ResourceName = Supplies
-			Ratio = 420
+			Ratio = 210
 		}
 	}
-
-
+    
 
 	RESOURCE
 	{
@@ -110,7 +114,7 @@
 	{
 		name = Supplies
 		amount = 0
-		maxAmount = 1000
+		maxAmount = 500
 		isTweakable = true
 	}
 }
