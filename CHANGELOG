@@ -3,7 +3,7 @@ _______________
 _______________
 
 
-v0.1, yyyy-mm-dd
+v1.0, 2020-12-20
 ----------------
 * inital release, covering:
   - WBI common templates (storage, omniconverter)
@@ -11,3 +11,6 @@ v0.1, yyyy-mm-dd
   - DSEV
   - Pathfinder
   - Buffalo
+* see partlist.xlsx for details
+
+

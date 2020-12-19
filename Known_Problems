@@ -1,6 +1,8 @@
-# Known Problems (and workarounds)
-# (1) NullReferenceException spam in the editor
+## Known Problems (and workarounds)
 
+## --IN-GAME PROBLEMS—
+
+# (1) NullReferenceException spam in the editor
 Occasionally happens when loading a vessel with WBI changeable templates and USI swappable bays/converters.
 Unfortunately, the USI swappable bays and swap controller dont like their swapoptions to be dynamically removed/added.
 
@@ -13,7 +15,6 @@ NullRefs should be gone, and the correct swaptions should be set on the USI conv
 
 
 # (2) Changing the WBI template in flight does not affect USI swapoptions, e.g. habitat continues to run even though the WBI template is switched to "Wet Workshop" (LFO storage), which does not have a habitat option.
-
 Does always happen, same cause as (1): the USI swapcontroller does not like its swap option to be completely removed.
 
 Workaround:
@@ -21,3 +22,33 @@ Workaround:
 * switch back to that vessel (flight mode)
 
 The converter (habitat, ls recycler) is still on the vessel and shown as active, but EC consumption should be zero now and there should be no hab/recycler effect on the vessel for this part (confirm with USI LS Monitor).
+
+
+# (3) Wrong display of life support and/or habitation timers & bonuses, especially in VAB.
+Can sometimes happen, especially after switching the templates multiple times, where some templates do contain USI swapoptions, and others do not.
+Usually fixed by saving the vessel, then clicking the blue (new craft) button (effectively clearing everything), then loading again the vessel just saved.
+
+
+## --INSTALL PROBLEMS--
+
+# (4) I have downloaded and “installed” the stuff, but nothing’s changed in game, and all your mod’s contents are just some .txt files…
+Congrats on not reading and following instructions.
+After installation you have to use the WBI playmode switcher to switch to this new USI playmode, then exit & restart KSP. Only then the files are loaded by KSP (changed to .cfg extension) and will take effect.
+
+I have manually renamed some .txt to .cfg and now everything’s a mess, duplicate templates, duplicate resources, …
+YOU SHOULD ONLY EVER MANUALLY RENAME PLAYMODE FILES IF YOU KNOW PRECISELY WHAT YOU’RE DOING!
+Seriously, use the WBI playmode switcher.
+Your mess should clean itself up after you do the following:
+Start KSP, use WBI playmode switcher to switch, successively, to at least 2 different playmodes (e.g. “CRP”, then “Classic Stock”).
+Then use it a third (and last) time to switch to USI.
+EXIT AND RESTART KSP.
+
+
+# (5) I have updated the mod, everything used to work fine, but now I have duplicate files (one with .cfg extension, one with .txt extension), the playmode switcher doesn’t work and my install is dogged…
+*YOU MUST TREAT UPDATES AS NEW INSTALLS!*
+You may never “just unpack and copy over” a new release onto your existing install, IF PLAYMODE USI IS YOUR ACTIVE PLAYMODE!
+The reason behind this is that all the files in this playmode are delivered “inactive”, with a .txt extension. The playmode switcher then takes care of deactivating all non-relevant ones (such as CRP, ClassicStock, etc) while activating the USI one (=renaming from .txt to .cfg).
+When a new release is published, you would end up having the files as .cfg (from the previous activating) and as .txt (from current release).
+
+
+
