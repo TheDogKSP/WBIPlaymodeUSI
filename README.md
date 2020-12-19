@@ -1,6 +1,5 @@
 # WBIPlaymodeUSI
 KSP: dedicated playmode "USI" for WildBlueIndustries (MOLE, Pathfinder, ...)
-
 See: https://imgur.com/gallery/L4RGZwK
 
 # Design Considerations
