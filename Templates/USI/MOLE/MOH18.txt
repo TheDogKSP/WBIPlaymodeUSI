@@ -21,7 +21,7 @@
 
 @MOH[Dolores]:AFTER[MOLE]:NEEDS[USILifeSupport]
 {
-    //Dolores hab: habitat function: 4months for 2 kerbals
+    //Dolores hab: habitat function: 12months for 2 kerbals
     
 	MODULE
 	{
