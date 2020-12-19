@@ -1,5 +1,6 @@
 # WBIPlaymodeUSI
 KSP: dedicated playmode "USI" for WildBlueIndustries (MOLE, Pathfinder, ...)
+See: https://imgur.com/gallery/L4RGZwK
 
 # Design Considerations
 * USI Life Support mechanism to be used; resources (supplies, fertilizer, mulch); LS recycler mechanics; habitation mechanics ()
