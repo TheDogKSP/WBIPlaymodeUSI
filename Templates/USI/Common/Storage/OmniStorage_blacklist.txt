@@ -4,7 +4,7 @@
 	@MODULE[WBIOmniStorage]
 	{
 		// additional genereal blacklisting
-		@resourceBlacklist ^= :$:;IntakeLqd;CarbonDioxide;ResourceLode;ElectricCharge;StoredCharge;CompressedAir;IntakeAtm;Megajoules;SolarWind;ThermalPower;VacuumPlasma;WasteHeat;Antimatter;ExoticMatter;SRMFuel;CoreSamples;Ablator:
+		@resourceBlacklist ^= :$:;IntakeLqd;CarbonDioxide;ResourceLode;ElectricCharge;StoredCharge;CompressedAir;IntakeAtm;Megajoules;SolarWind;ThermalPower;VacuumPlasma;WasteHeat;Antimatter;ExoticMatter;SRMFuel;CoreSamples;Ablator;Propellium;Buckminsterfullerene;Shielding;DDCarbonDioxide;DDLqdHydrogen;FanIntakeAir;AluLOx;Beryllium;UraniumTetrabromide;Buckyballs;StoredPower;KilowattHour:
 	}
 }
 @PART[*]:HAS[@MODULE[WBIOmniStorage]]
@@ -12,7 +12,7 @@
 	@MODULE[WBIOmniStorage]
 	{
 		// additional genereal blacklisting
-		@resourceBlacklist ^= :$:;IntakeLqd;CarbonDioxide;ResourceLode;ElectricCharge;StoredCharge;CompressedAir;IntakeAtm;Megajoules;SolarWind;ThermalPower;VacuumPlasma;WasteHeat;Antimatter;ExoticMatter;SRMFuel;CoreSamples;Ablator:
+		@resourceBlacklist ^= :$:;IntakeLqd;CarbonDioxide;ResourceLode;ElectricCharge;StoredCharge;CompressedAir;IntakeAtm;Megajoules;SolarWind;ThermalPower;VacuumPlasma;WasteHeat;Antimatter;ExoticMatter;SRMFuel;CoreSamples;Ablator;Propellium;Buckminsterfullerene;Shielding;DDCarbonDioxide;DDLqdHydrogen;FanIntakeAir;AluLOx;Beryllium;UraniumTetrabromide;Buckyballs;StoredPower;KilowattHour:
 	}
 }
 

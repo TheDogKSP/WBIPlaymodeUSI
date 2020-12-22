@@ -2,9 +2,13 @@ _______________
 -- CHANGELOG --
 _______________
 
+v1.0.1, 2020-12-22
+------------------
+* tested with latest USI versions 1.4.0 for KSP 1.11
+* blacklist some additional non-CRP resources for omnistorage
 
-v1.0, 2020-12-20
-----------------
+v1.0.0, 2020-12-20
+------------------
 * inital release, covering:
   - WBI common templates (storage, omniconverter)
   - MOLE
