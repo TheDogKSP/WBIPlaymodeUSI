@@ -1,6 +1,6 @@
 {
 	"NAME":"WBI-Playmode-USI-CommunityPatches",
-	"URL":"https://raw.githubusercontent.com/TheDogKSP/WBIPlaymodeUSI/main/wbiplaymodeusi.version",
+	"URL":"https://raw.githubusercontent.com/TheDogKSP/WBIPlaymodeUSI/master/wbiplaymodeusi.version",
 	"DOWNLOAD":"https://github.com/TheDogKSP/WBIPlaymodeUSI/releases/",
 	"GITHUB": {
 	    "USERNAME": "TheDogKSP",
