@@ -2,6 +2,10 @@ _______________
 -- CHANGELOG --
 _______________
 
+v1.0.2, 2020-12-28
+------------------
+* added gasdynamicslab with conversions for fuel making (LFO, MonoProp)
+
 v1.0.1, 2020-12-22
 ------------------
 * tested with latest USI versions 1.4.0 for KSP 1.11
