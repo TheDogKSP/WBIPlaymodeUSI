@@ -2,6 +2,8 @@
 KSP: dedicated playmode "USI" for WildBlueIndustries (MOLE, Pathfinder, ...). 
 See: https://imgur.com/gallery/L4RGZwK
 
+KSP forum thread: https://forum.kerbalspaceprogram.com/index.php?/topic/198964-community-%E2%80%9Cplaymode-usi%E2%80%9D-for-wild-blue-industries-mods/
+
 # Design Considerations
 * USI Life Support mechanism to be used; resources (supplies, fertilizer, mulch); LS recycler mechanics; habitation mechanics ()
    - https://github.com/UmbraSpaceIndustries/MKS/wiki/Life-Support
